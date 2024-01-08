@@ -11,10 +11,18 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'password';
+  password = "Eren";
 
   buttonClick() {
+    this.password = "Eren Salih"
     console.log("Event binding öğreniyoruz");
     
-  }
+  };
+  gettPassword() {
+    return this.password;
+  };
+  getName() {
+    return "Tekin";
+  };
 }
   
