@@ -2,22 +2,22 @@
 
 <div>
   <label for="">length of password</label>
-  <input type="text">
+  <input type="text" (change)="modifyLength($event.target.value)">
 </div>
 
 <div>
   <label for="">use the alphabet</label>
-  <input type="checkbox">
+  <input (change)="modifyLetters()"  type="checkbox">
 </div>
 
 <div>
   <label for="">use the numbers</label>
-  <input type="checkbox">
+  <input (change)="modifyNumbers()" type="checkbox">
 </div>
 
 <div>
   <label for="">use the symbols</label>
-  <input type="checkbox">
+  <input (change)="modifySymbols()" type="checkbox">
 </div>
 
 <div>
@@ -26,12 +26,9 @@
 
 <div>
   <label for="">Your Password</label>
-  <input [value]="gettPassword()">
+  <input >
 </div>
 
-<p>
-  {{password}}
-</p>
 <p>
   {{getName()}}
 </p>

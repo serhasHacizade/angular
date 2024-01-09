@@ -10,17 +10,40 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'password';
-  password = "Eren";
+  length: number = 0;
+  includeLetters: boolean = false;
+  includeNumbers: boolean = false;
+  includeSymbols: boolean = false;
 
+  modifyLength(value: string) {
+    const parsedValue = parseInt(value);
+    if (!isNaN(parsedValue)) {
+      debugger;
+      this.length = parsedValue;
+    }
+  }
+
+  modifyLetters() {
+    this.includeLetters = !this.includeLetters;
+  };
+
+  modifyNumbers() {
+    this.includeNumbers = !this.includeNumbers
+  }
+
+  modifySymbols() {
+    this.includeSymbols = !this.includeSymbols
+  }
+  
   buttonClick() {
-    this.password = "Eren Salih"
-    console.log("Event binding öğreniyoruz");
+    console.log(`Variables;
+    Letters : ${this.includeLetters},
+    Numbers : ${this.includeNumbers},
+    Symbols : ${this.includeSymbols},
+    `);
     
   };
-  gettPassword() {
-    return this.password;
-  };
+
   getName() {
     return "Tekin";
   };
