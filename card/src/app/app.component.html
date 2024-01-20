@@ -1,18 +1,4 @@
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="assets/tree.jpeg">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <p class="title is-4">Hiking</p>
-        <p class="subtitle is-6">Erne</p>
-      </div>
-    </div>
-    <div class="content">
-      Let's take a tour around Macka Park
-    </div>
-  </div>
+<div class="main">
+  <app-card *ngFor="let post of posts" [title]="post.title" [imageUrl]="post.imageUrl" [username]="post.username"
+  [content]="post.content"></app-card>
 </div>
