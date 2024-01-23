@@ -16,4 +16,53 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Payment date</label>
+        <input type="date" class="form-control" (input)="onDateChange($event.target.value)">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label><b>Payment date</b></label>
+      <div>
+        {{ date | date:"MMMM d,y" }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Cost</label>
+        <input class="form-control" (input)="onMoneyChange($event.target.value)">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label><b>Cost</b></label>
+      <div>
+        {{ money | currency }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Miles</label>
+        <input class="form-control" (input)="onMilesChange($event.target.value)">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label><b>Kilometer</b></label>
+      <div>
+        {{ miles | convert:"m" }}
+      </div>
+    </div>
+  </div>
+
 </div>
