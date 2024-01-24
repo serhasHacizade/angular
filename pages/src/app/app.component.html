@@ -1,0 +1,10 @@
+<nav>
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item" [ngClass]="i===currentPage ? 'active' : 'passive'" *ngFor="let image of images;let i = index">
+      <a class="page-link">{{i + 1}}</a>
+    </li>
+  </ul>
+</nav>
