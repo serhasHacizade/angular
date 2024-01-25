@@ -1,10 +1,22 @@
-<nav>
-  <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" tabindex="-1">Previous</a>
-    </li>
-    <li class="page-item" [ngClass]="i===currentPage ? 'active' : 'passive'" *ngFor="let image of images;let i = index">
-      <a class="page-link">{{i + 1}}</a>
-    </li>
-  </ul>
-</nav>
+<div class="container">
+  <nav>
+    <ul class="pagination paginationUl">
+      <li class="page-item" appFirst [ngClass]="{disabled:currentPage === 0}">
+        <a (click)="currentPage = currentPage - 1" class="page-link">Previous</a>
+      </li>
+      <ng-container *ngFor="let image of images;let i = index">
+        <li class="page-item" [ngClass]="i===currentPage ? 'active' : 'passive'" *ngIf="PageIndex(i)">
+          <a (click)="currentPage = i" class="page-link">{{i + 1}}</a>
+        </li>
+      </ng-container>
+      <li class="page-item" [ngClass]="{disabled:currentPage === images.length - 1}">
+        <a (click)="currentPage = currentPage + 1" class="page-link">Next</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="mainImg">
+    <h4 style="color: white;">{{images[currentPage].title}}</h4>
+    <img class="Img" [src]="images[currentPage].url" alt="">
+  </div>
+</div>
