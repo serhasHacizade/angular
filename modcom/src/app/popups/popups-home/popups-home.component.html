@@ -1,0 +1,5 @@
+<app-divider>
+    Popup
+</app-divider>
+<button (click)="onClick()">User approval</button>
+<app-modal (close)="onClick()" *ngIf="modalOpen"></app-modal>
