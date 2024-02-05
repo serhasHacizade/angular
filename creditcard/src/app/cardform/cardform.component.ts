@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cardform',
@@ -10,7 +10,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class CardformComponent {
 
   cardForm = new FormGroup({
-    name: new FormControl(""),
+    name: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(3)
+    ]),
     
   });
 

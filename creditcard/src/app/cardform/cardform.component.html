@@ -1,3 +1,8 @@
 <form [formGroup]="cardForm">
-    <input type="text" formControlName="name">
+    <app-input label="Name Surname" [control]="cardForm.get('name')"></app-input>
 </form>
+
+<div>Form içeriği: {{ cardForm.value | json }}</div>
+<div>Form içeriği: {{ cardForm.valid ? "Evet":"Hayır" }}</div>
+
+<div>Form hataları: {{ cardForm.get("name")?.errors | json}}</div>
