@@ -1,17 +1,20 @@
 <div class="field">
     <label class="label">{{ label }}</label>
     <div class="control">
-        <input class="input" type="text" [formControl]="control"
-        [ngClass]="{'is-danger':showErrors()}">
+        <input class="input" type="text" [formControl]="control" [ngClass]="{'is-danger':showErrors()}">
     </div>
 </div>
 
 <ng-container *ngIf="showErrors()">
-    <div class="help is-danger" *ngIf="control.get('name')?.errors?.['required']">
+    <div class="help is-danger" *ngIf="control.errors?.['required']">
         *Required
     </div>
-    <div class="help is-danger" *ngIf="control.get('name')?.errors?.['minlength']">
+    <div class="help is-danger" *ngIf="control.errors?.['minlength']">
         *Required min 3 characters
-        You have enter {{ control.get('name')?.errors?.['actualLength'] }}
+        You have enter {{ control.errors?.['minlength']?.['actualLength'] }} character(s)
+    </div>
+    <div class="help is-danger" *ngIf="control.errors?.['maxlength']">
+        *Required max 16 characters
+        You have enter {{ control.errors?.['maxlength']?.['actualLength'] }} characters
     </div>
 </ng-container>
