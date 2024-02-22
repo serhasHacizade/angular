@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { FormGroup, FormControl, AbstractControl } from '@angular/forms';
-
+import {EqualityValidatorsComponent} from "../equality-validators/equality-validators.component"
 
 @Component({
   selector: 'app-equality',
@@ -15,16 +15,7 @@ export class EqualityComponent {
     secondNumber : new FormControl(this.generateNumber()),
     answer : new FormControl(""),
   },
-  [
-    (form: AbstractControl) => {
-      console.log(form.value);
-      const {firstNumber, secondNumber, answer} = form.value;
-      if (firstNumber + secondNumber === parseInt(answer)) {
-        return null;
-      }
-      return {addition: true}
-    }
-  ]);
+  [EqualityValidatorsComponent.addition("firstNumber","secondNumber","answer")]);
 
 
   get firstNumber() {

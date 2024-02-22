@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { EqualityComponent } from './equality/equality.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { EqualityValidatorsComponent } from './equality-validators/equality-validators.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EqualityComponent
+    EqualityComponent,
+    EqualityValidatorsComponent
   ],
   imports: [
     BrowserModule,
