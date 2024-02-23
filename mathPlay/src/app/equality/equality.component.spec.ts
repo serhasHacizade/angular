@@ -8,10 +8,12 @@ describe('EqualityComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [EqualityComponent]
+      declarations: [ EqualityComponent ]
     })
     .compileComponents();
-    
+  });
+
+  beforeEach(() => {
     fixture = TestBed.createComponent(EqualityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

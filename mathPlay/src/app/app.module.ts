@@ -1,23 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EqualityComponent } from './equality/equality.component';
-
-import { ReactiveFormsModule } from '@angular/forms';
-import { EqualityValidatorsComponent } from './equality-validators/equality-validators.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EqualityComponent,
-    EqualityValidatorsComponent
+    EqualityComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule
+    BrowserModule,ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

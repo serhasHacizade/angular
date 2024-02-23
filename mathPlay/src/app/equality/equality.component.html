@@ -1,9 +1,14 @@
+<div style="display: flex;justify-content: center;">
+  <h1 style="color: red;">How many seconds did you find the correct answer?</h1>
+</div>
+
+
+
 <form [formGroup]="mathForm">
-    {{ firstNumber }} + {{ secondNumber }} = 
-    <input type="text" formControlName="answer">
+  {{firstNumber}} + {{secondNumber}} =
+  <input type="text" formControlName="answer">
 </form>
 
-<hr>
-<div>Form is valid?: {{ mathForm.valid }}</div>
-<div>Form variables?: {{ mathForm.value | json }}</div>
-<div>Form errors?: {{ mathForm.errors | json }}</div>
+<div class="correctAnswer">
+  {{seconds | number : '1.1-3'}}
+</div>
