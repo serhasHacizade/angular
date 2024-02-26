@@ -1,0 +1,48 @@
+<button mat-button>Basic</button>
+<button mat-raised-button color="primary">Primary</button>
+<button mat-stroked-button color="primary">Accent</button>
+<button mat-flat-button color="primary">Warn</button>
+
+<hr>
+
+<button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+    <mat-icon>more_vert</mat-icon>
+</button>
+<button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+    <mat-icon>chevron_right</mat-icon>
+</button>
+<button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+    <mat-icon>menu</mat-icon>
+</button>
+
+<hr>
+
+<h3>Single selection</h3>
+<mat-button-toggle-group>
+    <mat-button-toggle>Red</mat-button-toggle>
+    <mat-button-toggle>Green</mat-button-toggle>
+    <mat-button-toggle>Blue</mat-button-toggle>
+</mat-button-toggle-group>
+
+<hr>
+
+<h3>Multiple selection</h3>
+<mat-button-toggle-group name="ingredients" aria-label="Ingredients" multiple>
+  <mat-button-toggle value="flour">Flour</mat-button-toggle>
+  <mat-button-toggle value="eggs">Eggs</mat-button-toggle>
+  <mat-button-toggle value="sugar">Sugar</mat-button-toggle>
+</mat-button-toggle-group>
+
+<hr>
+
+<div style="margin: 50px;">
+    <span [matBadge]="news" [matBadgeHidden]="news===0" matBadgeOverlap="false">Can boz</span>
+</div>
+
+<div style="margin: 50px;">
+    <span matBadge="4" matBadgeOverlap="false" matBadgePosition="below before">Can boz</span>
+</div>
+
+<div style="margin: 50px;">
+    <span matBadge="4" matBadgeOverlap="false" matBadgePosition="below after">Can boz</span>
+</div>
