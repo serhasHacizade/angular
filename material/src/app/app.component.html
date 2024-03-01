@@ -1,48 +1,60 @@
-<button mat-button>Basic</button>
-<button mat-raised-button color="primary">Primary</button>
-<button mat-stroked-button color="primary">Accent</button>
-<button mat-flat-button color="primary">Warn</button>
+<mat-toolbar color="primary" class="title">
+    <div style="display: flex; align-items: center;">
+        <div>Eren Salih</div>
+        <button style="margin: 10px;" mat-raised-button (click)="sidenav.toggle()">Toggle</button>
+    </div>
+    <div>
+        <span>Home page</span>
+        <span>About</span>
+        <span>Course</span>
+    </div>
+</mat-toolbar>
 
-<hr>
+<mat-drawer-container>
+    <mat-drawer #sidenav mode="side" [(opened)]="opened">Sidenav</mat-drawer>
+    <mat-drawer-content style="margin-left: 30px;">
+        <mat-menu #appMenu xPosition="after" yPosition="above">
+            <button mat-menu-item [matMenuTriggerFor]="subMenuFront">Frontend</button>
+            <button mat-menu-item [matMenuTriggerFor]="subMenuBackend">Backend</button>
+        </mat-menu>
+        <button mat-raised-button [matMenuTriggerFor]="appMenu">Menu</button>
+        <mat-menu #subMenuFront="matMenu">
+            <button mat-menu-item>Angular</button>
+            <button mat-menu-item>React</button>
+            <button mat-menu-item>Vue Js</button>
+        </mat-menu>
+        <mat-menu #subMenuBackend="matMenu">
+            <button mat-menu-item>C#</button>
+            <button mat-menu-item>Python</button>
+            <button mat-menu-item>Node Js</button>
+        </mat-menu>
+        <mat-menu #dataMenu="matMenu">
+            <ng-template matMenuContent let-name="name">
+                <button mat-menu-item>Ayarlar</button>
+                <button mat-menu-item>Çıkış yap {{name}}</button>
+            </ng-template>
+        </mat-menu>
+        <button class="title" mat-raised-button [matMenuTriggerData]="{name:'Can'}"
+            [matMenuTriggerFor]="dataMenu">Can</button>
+        <button class="title" mat-raised-button [matMenuTriggerData]="{name:'Osman'}"
+            [matMenuTriggerFor]="dataMenu">Osman</button>
 
-<button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-    <mat-icon>more_vert</mat-icon>
-</button>
-<button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-    <mat-icon>chevron_right</mat-icon>
-</button>
-<button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
-    <mat-icon>menu</mat-icon>
-</button>
+        <mat-selection-list #shoes style="width: 50%;">
+            @for (shoe of typesOfShoes; track shoe) {
+            <mat-list-option>{{shoe}}</mat-list-option>
+            }
+        </mat-selection-list>
 
-<hr>
+        <p>
+            Options selected: {{shoes.selectedOptions.selected.length}}
+        </p>
 
-<h3>Single selection</h3>
-<mat-button-toggle-group>
-    <mat-button-toggle>Red</mat-button-toggle>
-    <mat-button-toggle>Green</mat-button-toggle>
-    <mat-button-toggle>Blue</mat-button-toggle>
-</mat-button-toggle-group>
+        <mat-grid-list cols="4" rowHeight="100px">
+            @for (tile of tiles; track tile) {
+            <mat-grid-tile [colspan]="tile.cols" [rowspan]="tile.rows"
+                [style.background]="tile.color">{{tile.text}}</mat-grid-tile>
+            }
+        </mat-grid-list>
 
-<hr>
-
-<h3>Multiple selection</h3>
-<mat-button-toggle-group name="ingredients" aria-label="Ingredients" multiple>
-  <mat-button-toggle value="flour">Flour</mat-button-toggle>
-  <mat-button-toggle value="eggs">Eggs</mat-button-toggle>
-  <mat-button-toggle value="sugar">Sugar</mat-button-toggle>
-</mat-button-toggle-group>
-
-<hr>
-
-<div style="margin: 50px;">
-    <span [matBadge]="news" [matBadgeHidden]="news===0" matBadgeOverlap="false">Can boz</span>
-</div>
-
-<div style="margin: 50px;">
-    <span matBadge="4" matBadgeOverlap="false" matBadgePosition="below before">Can boz</span>
-</div>
-
-<div style="margin: 50px;">
-    <span matBadge="4" matBadgeOverlap="false" matBadgePosition="below after">Can boz</span>
-</div>
+    </mat-drawer-content>
+</mat-drawer-container>
