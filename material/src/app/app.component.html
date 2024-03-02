@@ -49,12 +49,91 @@
             Options selected: {{shoes.selectedOptions.selected.length}}
         </p>
 
-        <mat-grid-list cols="4" rowHeight="100px">
+        <mat-grid-list style="width: 50%;" cols="4" rowHeight="100px">
             @for (tile of tiles; track tile) {
             <mat-grid-tile [colspan]="tile.cols" [rowspan]="tile.rows"
                 [style.background]="tile.color">{{tile.text}}</mat-grid-tile>
             }
         </mat-grid-list>
+        <mat-accordion>
+            <mat-expansion-panel style="width: 50%;">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Angular Courses
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Total time: 24 saat
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>Teacher Can Boz</p>
+                <mat-action-row>
+                    <button mat-raised-button>Log in</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+            <mat-expansion-panel style="width: 50%;">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        React Courses
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Total time: 32 saat
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>Teacher Can Boz</p>
+                <mat-action-row>
+                    <button mat-raised-button>Log in</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <mat-card>
+            <mat-card-title>Card title</mat-card-title>
+            <mat-card-content>CardContent</mat-card-content>
+            <mat-card-actions align="end">
+                <button mat-raised-button>Log in</button>
+            </mat-card-actions>
+        </mat-card>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                    bred for hunting.
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+            </mat-card-actions>
+        </mat-card>
 
+        <mat-tab-group dynamicHeight style="margin-bottom: 200px;">
+            <mat-tab label="Short tab">
+                <div class="example-small-box mat-elevation-z4">
+                    Small content
+                </div>
+            </mat-tab>
+            <mat-tab label="Long tab">
+                <div class="example-large-box mat-elevation-z4">
+                    Large content
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+        <mat-horizontal-stepper linear>
+            <mat-step label="Sender address" completed="false">Sender address</mat-step>
+            <mat-step label="Bill address" completed="false">Bill address
+                <div>
+                    <button mat-raised-button matStepperPrevious>Previous</button>
+                    <button mat-raised-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step label="Order" completed="false">Order</mat-step>
+        </mat-horizontal-stepper>
     </mat-drawer-content>
 </mat-drawer-container>

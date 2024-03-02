@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 
 export interface Tile {
   color: string;
@@ -12,27 +13,39 @@ export interface Tile {
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
+  constructor(private cdref: ChangeDetectorRef) { }
+
   title = 'material';
   news = 58;
   show = false;
-  opened=false;
+  opened = false;
   typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
 
   tiles: Tile[] = [
-    {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
+    { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
+    { text: 'Two', cols: 1, rows: 2, color: 'lightgreen' },
+    { text: 'Three', cols: 1, rows: 1, color: 'lightpink' },
+    { text: 'Four', cols: 2, rows: 1, color: '#DDBDF1' },
   ];
-  
+
   getData() {
     this.show = true;
     setTimeout(() => {
       this.show = false;
-    },3000);
+    }, 3000);
   }
 
   openSide() {
     this.opened = !this.opened;
+  }
+
+  ngAfterContentChecked() {
+    this.cdref.detectChanges();
+  }
+
+  logChance(index: number | null) {
+    console.log(index);
+
   }
 }
