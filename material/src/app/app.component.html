@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="title">
+<mat-toolbar color="primary" class="title" style="display: sticky;">
     <div style="display: flex; align-items: center;">
         <div>Eren Salih</div>
         <button style="margin: 10px;" mat-raised-button (click)="sidenav.toggle()">Toggle</button>
@@ -135,5 +135,89 @@
             </mat-step>
             <mat-step label="Order" completed="false">Order</mat-step>
         </mat-horizontal-stepper>
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input type="text" matInput>
+            <mat-hint>minimum 3 character</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="fill" color="warn">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput>
+            <mat-hint>minimum 3 character</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput>
+            <mat-hint>minimum 3 character</mat-hint>
+        </mat-form-field>
+        <textarea matInput required></textarea>
+        <br>
+        <mat-form-field style="margin-bottom: 50px;">
+            <mat-label>Frameworkler</mat-label>
+            <mat-select [(value)]="selectedValue" multiple>
+                <mat-optgroup label="Frontend">
+                    <mat-option value="angular">Angular</mat-option>
+                    <mat-option value="react">React</mat-option>
+                    <mat-option value="vue">Vue Js</mat-option>
+                </mat-optgroup>
+                <mat-optgroup label="Backend">
+                    <mat-option value="csharp">C#</mat-option>
+                    <mat-option value="python">Python</mat-option>
+                    <mat-option value="nodejs">NOde Js</mat-option>
+                </mat-optgroup>
+            </mat-select>
+        </mat-form-field>
+        {{selectedValue}}
+        <br>
+        <!-- <mat-form-field style="margin-bottom: 50px;">
+            <input type="text" matInput [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="showIt">
+                <mat-option *ngFor="let option of objectOptions" [value]="option">
+                    {{option.name}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field> -->
+
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Number</mat-label>
+                <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+                    [matAutocomplete]="auto">
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    @for (option of filteredOptions | async; track option) {
+                    <mat-option [value]="option">{{option}}</mat-option>
+                    }
+                </mat-autocomplete>
+            </mat-form-field>
+        </form>
+
+        <mat-checkbox>Login</mat-checkbox>
+        <br>
+        <mat-checkbox labelPosition="before">Logout</mat-checkbox>
+        <br>
+        <mat-checkbox color="primary">Logout</mat-checkbox>
+        <br>
+        <mat-checkbox color="warn">Logout</mat-checkbox>
+        <br>
+
+        <mat-radio-group>
+            <mat-radio-button color="primary" value="angular">Angular</mat-radio-button>
+            <mat-radio-button value="react">React</mat-radio-button>
+            <mat-radio-button color="warn" value="vue">Vue Js</mat-radio-button>
+        </mat-radio-group>
+
+        <br>
+        <mat-form-field>
+            <input type="text" matInput [matDatepicker]="myDatePicker" [min]="minDate" 
+            [max]="maxDate" [matDatepickerFilter]="dateFilter">
+            <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker></mat-datepicker>
+        </mat-form-field>
+        <br>
+
+        <button mat-raised-button matTooltip="Angular Courses" matTooltipPosition="above"
+        matTooltipShowDelay="2000" matTooltipHideDelay="2000">
+            Eren Salih
+        </button>
     </mat-drawer-content>
 </mat-drawer-container>

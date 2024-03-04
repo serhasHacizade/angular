@@ -1,18 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChangeDetectorRef } from '@angular/core';
 
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
 export interface Tile {
   color: string;
   cols: number;
   rows: number;
   text: string;
 }
+
+export interface Backend {
+  name: string;
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   constructor(private cdref: ChangeDetectorRef) { }
 
@@ -46,6 +53,43 @@ export class AppComponent {
 
   logChance(index: number | null) {
     console.log(index);
-
   }
+
+  selectedValue: string = "";
+  // options: string[] = ["Angular","React", "Vue"];
+  objectOptions = [
+    {name:"C#"},
+    {name:"Python"},
+    {name:"Node Js"},
+  ];
+
+  showIt(subject: Backend): string {
+    return subject ? subject.name : "";
+  }
+
+  myControl = new FormControl('');
+  options: string[] = ['One', 'Two', 'Three'];
+  filteredOptions!: Observable<string[]>;
+
+  ngOnInit() {
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value || '')),
+    );
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  }
+
+
+  minDate = new Date();
+  maxDate = new Date("May 20 2024");
+
+  dateFilter = (date:any) => {
+    const day = date.getDay();
+    return day != 0;
+  };
 }
