@@ -34,10 +34,17 @@ import { MatDatepickerModule } from "@angular/material/datepicker"
 import { MatNativeDateModule} from "@angular/material/core"
 import { MatTooltipModule} from "@angular/material/tooltip"
 
+import { MatSnackBarModule} from "@angular/material/snack-bar"
+import { MatDialogModule} from "@angular/material/dialog";
+import { DialogErnComponent } from './dialog-ern/dialog-ern.component'
+import { MatTableModule} from "@angular/material/table";
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogErnComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +76,10 @@ import { MatTooltipModule} from "@angular/material/tooltip"
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatTableModule
   ],
   providers: [
     provideAnimationsAsync()

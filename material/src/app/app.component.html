@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="title" style="display: sticky;">
+<mat-toolbar color="primary" class="title">
     <div style="display: flex; align-items: center;">
         <div>Eren Salih</div>
         <button style="margin: 10px;" mat-raised-button (click)="sidenav.toggle()">Toggle</button>
@@ -12,7 +12,7 @@
 
 <mat-drawer-container>
     <mat-drawer #sidenav mode="side" [(opened)]="opened">Sidenav</mat-drawer>
-    <mat-drawer-content style="margin-left: 30px;">
+    <mat-drawer-content> 
         <mat-menu #appMenu xPosition="after" yPosition="above">
             <button mat-menu-item [matMenuTriggerFor]="subMenuFront">Frontend</button>
             <button mat-menu-item [matMenuTriggerFor]="subMenuBackend">Backend</button>
@@ -208,16 +208,52 @@
 
         <br>
         <mat-form-field>
-            <input type="text" matInput [matDatepicker]="myDatePicker" [min]="minDate" 
-            [max]="maxDate" [matDatepickerFilter]="dateFilter">
+            <input type="text" matInput [matDatepicker]="myDatePicker" [min]="minDate" [max]="maxDate"
+                [matDatepickerFilter]="dateFilter">
             <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
             <mat-datepicker #myDatePicker></mat-datepicker>
         </mat-form-field>
         <br>
 
-        <button mat-raised-button matTooltip="Angular Courses" matTooltipPosition="above"
-        matTooltipShowDelay="2000" matTooltipHideDelay="2000">
+        <button style="margin-right: 50px;" mat-raised-button matTooltip="Angular Courses" matTooltipPosition="above"
+            matTooltipShowDelay="2000" matTooltipHideDelay="2000">
             Eren Salih
         </button>
+
+        <button mat-raised-button (click)="openSnackBar('deleted', 'close')">Delete</button>
+        <br>
+
+        <button mat-raised-button (click)="openDialog()" style="margin: 50px 0;">open dialog</button>
+        <br>
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef> Weight </th>
+                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
     </mat-drawer-content>
 </mat-drawer-container>
