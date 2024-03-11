@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Add new board</h2>
+<mat-dialog-content>
+    <form [formGroup]="boardForm">
+        <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>Header</mat-label>
+            <input matInput formControlName="title" (keyup.enter)="create()">
+            <mat-error *ngIf="boardForm.get('title')?.hasError('required')">
+                Header is required
+            </mat-error>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button (click)="close()" color="accent" mat-raised-button>Cancel</button>
+    <button (click)="create()" color="primary" mat-raised-button [disabled]="boardForm.invalid">Generate</button>
+</mat-dialog-actions>
