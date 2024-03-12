@@ -16,8 +16,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { ViewBoardComponent } from './view-board/view-board.component';
+import { ViewBoardDialogComponent } from './view-board/view-board-dialog/view-board-dialog.component';
 
-
+import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -26,7 +30,9 @@ import { ViewBoardComponent } from './view-board/view-board.component';
     HeaderComponent,
     BoardsComponent,
     BoardsDialogComponent,
-    ViewBoardComponent
+    ViewBoardComponent,
+    ViewBoardDialogComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,11 @@ import { ViewBoardComponent } from './view-board/view-board.component';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    MatSnackBarModule,
+    MatCardModule,
+    MatCheckboxModule
   ],
   providers: [
     provideClientHydration(),
