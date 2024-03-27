@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../services/blog.service';
+import { MatDialog } from '@angular/material/dialog';
+import { HomeDialogComponent } from './home-dialog/home-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +14,18 @@ export class HomeComponent {
 
   blogData: Array<any> = [];
 
-  constructor(private blogService: BlogService) {
+  constructor(private blogService: BlogService, public dialog: MatDialog) {
   }
   ngOnInit(): void {
     this.blogService.getPosts().subscribe((res) => {
       this.blogData = res;
-      
+
+    });
+  };
+
+  openDialog(element: any, vieworupdate: any) {
+    const dialogRef = this.dialog.open(HomeDialogComponent, {
+      data: { blog: element, isUpdate: vieworupdate }
     });
   };
 };

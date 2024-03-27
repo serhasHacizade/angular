@@ -11,21 +11,26 @@ import { MatButtonModule } from '@angular/material/button';
 import { BaseService } from './services/base.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeDialogComponent } from './home/home-dialog/home-dialog.component';
+
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    HomeDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatCardModule,
+    NgbModule,
     MatButtonModule,
-    NgbModule
+    MatDialogModule,
   ],
   providers: [
     provideClientHydration(),

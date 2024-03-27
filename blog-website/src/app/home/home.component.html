@@ -20,8 +20,8 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button color="primary">Display</button>
-          <button mat-raised-button color="accent">Edit</button>
+          <button (click)="openDialog(post, false)" mat-raised-button color="primary">Display</button>
+          <button (click)="openDialog(post, true)" mat-raised-button color="accent">Edit</button>
         </mat-card-actions>
       </mat-card>
     </div>
