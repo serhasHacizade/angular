@@ -1,1 +1,30 @@
-<p>home-dialog works!</p>
+<div style="display: flex;justify-content: space-between;">
+
+    <div style="display: flex;align-items: center;">
+        <h3 style="margin: 0px;">
+            <span>{{isUpdate ? "update text" : "display text"}}</span>
+        </h3>
+    </div>
+    <button (click)="close()" style="font-size: 24px;" mat-button>X</button>
+</div>
+<mat-divider></mat-divider>
+
+<div *ngIf="!isUpdate">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="assets/images/image{{imageUrl}}.jpg" alt="" class="w-100">
+        </div>
+        <div class="col-md-6">
+            <h2>{{title}}</h2>
+            <p>{{body}}</p>
+        </div>
+    </div>
+    <div class="row" *ngFor="let comment of commentData">
+        <div class="col-md-2">
+            <img src="assets/images/profile/profile{{comment.userId}}.jpg" alt="">
+        </div>
+        <div class="col-md-10">
+
+        </div>
+    </div>
+</div>

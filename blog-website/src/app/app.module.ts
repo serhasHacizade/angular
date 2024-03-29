@@ -14,6 +14,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeDialogComponent } from './home/home-dialog/home-dialog.component';
 
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 
 
@@ -31,6 +33,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     NgbModule,
     MatButtonModule,
     MatDialogModule,
+    MatDividerModule,
   ],
   providers: [
     provideClientHydration(),
