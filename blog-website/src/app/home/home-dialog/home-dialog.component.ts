@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { CommentsService } from '../../services/comments.service';
+import { CommentService } from '../../services/comment.service';
 
 @Component({
   selector: 'app-home-dialog',
@@ -16,7 +16,7 @@ export class HomeDialogComponent {
   commentData: any;
 
 
-  constructor(private commentService: CommentsService,
+  constructor(private commentService: CommentService,
     @Inject(MAT_DIALOG_DATA) private data: any, private dialogRef:
       MatDialogRef<HomeDialogComponent>) {
     if (data.isUpdate) {
