@@ -15,7 +15,7 @@ export class BaseService {
     return this.http.get<any>(this.baseUrlUpdate(url), {
       headers: new HttpHeaders({
         'Content-Type': 'application/json; charset=utf-8',
-        'Access-Control-Allow-Origin': this.baseUrlUpdate(url)
+        'Access-Control-Allow-Origin': this.baseUrlUpdate(url),
       }),
     });
   }

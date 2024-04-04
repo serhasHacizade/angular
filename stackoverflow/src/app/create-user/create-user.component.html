@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="form-container">
+        <div class="title">Create account</div>
+        <form [formGroup]="createUserForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Type email</mat-label>
+                <input matInput formControlName="email">
+                <mat-error>
+                    <p *ngIf="f['email'].errors && f['email'].errors['required']">
+                        Email is required
+                    </p>
+                    <p *ngIf="f['email'].errors && f['email'].errors['email']">
+                        Type true format of email
+                    </p>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Type username</mat-label>
+                <input matInput formControlName="username">
+                <mat-error>
+                    <p *ngIf="f['username'].errors && f['username'].errors['required']">
+                        Username is required
+                    </p>
+                    <p *ngIf="f['username'].errors && f['username'].errors['maxlength']">
+                        Type minimum 10 characters
+                    </p>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Type password</mat-label>
+                <input matInput type="password" formControlName="password">
+                <mat-error>
+                    <p *ngIf="f['password'].errors && f['password'].errors['required']">
+                        Password is required
+                    </p>
+                    <p *ngIf="f['password'].errors && f['password'].errors['minlength']">
+                        Type minimum 8 characters
+                    </p>
+                </mat-error>
+            </mat-form-field>
+        </form>
+        <div class="buttons-container">
+            <button mat-raised-button class="login-button" 
+            [disabled]="createUserForm.invalid">Register</button>
+            <p>Or</p>
+            <button routerLink="/login" mat-button>Log in</button>
+            {{createUserForm.value | json}}
+        </div>
+    </div>
+</div>

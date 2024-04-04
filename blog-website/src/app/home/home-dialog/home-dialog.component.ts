@@ -31,10 +31,9 @@ export class HomeDialogComponent {
 
   ngOnInit(): void {
     this.commentService.getComments().subscribe((res) => {
-      debugger;
+      console.log(res);
+      
       this.commentData = res.filter((x: { postId: any; }) => x.postId == this.data.blog.id);
-      debugger;
-
     });
   };
 
