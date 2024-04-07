@@ -17,15 +17,22 @@ export class HomeComponent {
   constructor(private blogService: BlogService, public dialog: MatDialog) {
   }
   ngOnInit(): void {
-    this.blogService.getPosts().subscribe((res) => {
-      this.blogData = res;
-
-    });
+    this.getBlogList();
   };
 
   openDialog(element: any, vieworupdate: any) {
     const dialogRef = this.dialog.open(HomeDialogComponent, {
       data: { blog: element, isUpdate: vieworupdate }
+    });
+
+    dialogRef.afterClosed().subscribe(res => {
+      this.getBlogList();
+    });
+  };
+
+  getBlogList() {
+    this.blogService.getPosts().subscribe((res) => {
+      this.blogData = res;
     });
   };
 };

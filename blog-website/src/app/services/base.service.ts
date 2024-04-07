@@ -15,7 +15,6 @@ export class BaseService {
     return this.http.get<any>(this.baseUrlUpdate(url), {
       headers: new HttpHeaders({
         'Content-Type': 'application/json; charset=utf-8',
-        'Access-Control-Allow-Origin': this.baseUrlUpdate(url),
       }),
     });
   }
@@ -25,7 +24,6 @@ export class BaseService {
     return this.http.post<any>(this.baseUrlUpdate(url), data, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json; charset=utf-8',
-        'Access-Control-Allow-Origin': this.baseUrlUpdate(url)
       }),
     });
   }
@@ -34,7 +32,6 @@ export class BaseService {
     return this.http.put<any>(this.baseUrlUpdate(url), data, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json; charset=utf-8',
-        'Access-Control-Allow-Origin': this.baseUrlUpdate(url)
       }),
     });
   }

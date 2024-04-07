@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-create-user',
@@ -7,7 +8,7 @@ import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
   styleUrl: './create-user.component.scss'
 })
 export class CreateUserComponent {
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, public userService: UserService) {
 
   }
   createUserForm = this.fb.group({
@@ -16,7 +17,14 @@ export class CreateUserComponent {
     password: ["", [Validators.required, Validators.minLength(8)]],
   });
 
-  get f(): {[key: string]: AbstractControl} {
+  get f(): { [key: string]: AbstractControl } {
     return this.createUserForm.controls;
-  }
-}
+  };
+
+  createAccount() {
+    this.userService.createAccount(this.createUserForm.value).subscribe((res) => {
+      console.log(res);
+
+    });
+  };
+};

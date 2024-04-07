@@ -22,7 +22,7 @@
                         Username is required
                     </p>
                     <p *ngIf="f['username'].errors && f['username'].errors['maxlength']">
-                        Type minimum 10 characters
+                        Type maximum 10 characters
                     </p>
                 </mat-error>
             </mat-form-field>
@@ -41,7 +41,7 @@
         </form>
         <div class="buttons-container">
             <button mat-raised-button class="login-button" 
-            [disabled]="createUserForm.invalid">Register</button>
+            [disabled]="createUserForm.invalid" (click)="createAccount()">Register</button>
             <p>Or</p>
             <button routerLink="/login" mat-button>Log in</button>
             {{createUserForm.value | json}}

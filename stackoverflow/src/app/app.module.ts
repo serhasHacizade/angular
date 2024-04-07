@@ -9,12 +9,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms"
+
+import {HttpClientModule} from "@angular/common/http";
+import { BaseService } from './services/base.service';
 
 @NgModule({
   declarations: [
@@ -26,16 +30,19 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms"
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSnackBarModule,
     FormsModule,
     ReactiveFormsModule
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    BaseService
   ],
   bootstrap: [AppComponent]
 })
