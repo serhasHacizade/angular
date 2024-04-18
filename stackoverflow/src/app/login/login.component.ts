@@ -24,7 +24,7 @@ export class LoginComponent {
   };
 
   login() {
-    this.userService.getUser(this.loginForm.value.email).subscribe((res) => {
+    this.userService.getUser(this.loginForm.value.email!).subscribe((res) => {
       console.log(res);
       
     })
