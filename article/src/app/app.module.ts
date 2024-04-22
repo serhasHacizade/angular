@@ -18,6 +18,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { BaseService } from './services/base.service';
+import { ViewArticleComponent } from './view-article/view-article.component';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    CreateArticleComponent
+    CreateArticleComponent,
+    ViewArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   providers: [
     provideClientHydration(),
     provideAnimationsAsync(),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
+    BaseService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="content-wrapper">
+        <div class="title">{{articlesData[articleIndex].title}}</div>
+        <div class="content">{{articlesData[articleIndex].content}}</div>
+        <div class="author">Author: {{articlesData[articleIndex].author}}</div>
+        <div class="comments">
+            <span class="comment"><span class="uname">Erne:</span> <span class="comment">
+                    Comments
+                </span></span>
+        </div>
+        <mat-form-field>
+            <mat-label>User name</mat-label>
+            <input matInput [(ngModel)]="username">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Comment</mat-label>
+            <input matInput [(ngModel)]="comment">
+        </mat-form-field>
+        <button (click)="addComment()" mat-raised-button color="primary">Add comment</button>
+    </div>
+</div>

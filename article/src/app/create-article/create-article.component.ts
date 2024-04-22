@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { ArticleService } from '../services/article.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-article',
@@ -7,6 +9,7 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
   styleUrl: './create-article.component.css'
 })
 export class CreateArticleComponent {
+  constructor(public articlesService: ArticleService, private router: Router) { };
 
   username: string = "";
   title: string = "";
@@ -51,5 +54,18 @@ export class CreateArticleComponent {
     ],
     sanitize: true,
     toolbarPosition: 'top',
+  };
+
+  post() {
+    let postObj = {
+      author: this.username,
+      title: this.title,
+      content: this.content,
+      comments: []
+    };
+    this.articlesService.postArticle(postObj).subscribe((res) => {
+      console.log(res);
+      this.router.navigate(["/home"]);
+    });
   };
 }

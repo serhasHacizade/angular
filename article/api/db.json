@@ -1,3 +1,27 @@
 {
-    "articles": []
+  "articles": [
+    {
+      "id": "a70d",
+      "author": "eren",
+      "title": "başlık",
+      "content": "açıklama",
+      "comments": [
+        {
+          "username": "eren5",
+          "comment": "comment2"
+        },
+        {
+          "username": "",
+          "comment": ""
+        }
+      ]
+    },
+    {
+      "id": "7b5e",
+      "author": "eren2",
+      "title": "title2",
+      "content": "açıklama2",
+      "comments": []
+    }
+  ]
 }

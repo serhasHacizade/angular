@@ -1,10 +1,10 @@
 <div class="container">
     <div class="content-wrapper">
-        <button class="create-button" mat-button>Create new article</button>
-        <div class="card">
-            <div class="title">title div</div>
-            <div class="author">Erne</div>
-            <div class="content">this is article application website</div>
+        <button routerLink="/create" class="create-button" mat-button>Create new article</button>
+        <div [routerLink]="'/view/'+i" class="card" *ngFor="let article of articlesData;let i = index">
+            <div class="title">{{article.title}}</div>
+            <div class="author">{{article.author}}</div>
+            <div class="content">{{article.content}}</div>
         </div>
     </div>
 </div>
