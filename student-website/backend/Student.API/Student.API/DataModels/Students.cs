@@ -1,6 +1,6 @@
 ﻿namespace Student.API.DataModels
 {
-    public class Student
+    public class Students
     {
         public Guid Id { get; set; }
         public string FirstName { get; set; }
