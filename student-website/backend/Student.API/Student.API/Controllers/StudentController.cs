@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Student.API.Repositories;
 using Student.API.DomainModels;
+using AutoMapper;
 
 namespace Student.API.Controllers
 {
@@ -9,34 +10,21 @@ namespace Student.API.Controllers
     {
         
         private readonly IStudentRepository studentRepository;
-        public StudentController(IStudentRepository studentRepository)
+        private readonly IMapper mapper;
+        public StudentController(IStudentRepository studentRepository, IMapper mapper)
         {
             this.studentRepository = studentRepository;
+            this.mapper = mapper;
         }
 
         [HttpGet]
         [Route("[controller]")]
-        public IActionResult GetAllStudents()
+        public async Task<IActionResult> GetAllStudentsAsync()
         {
-            var students = studentRepository.GetStudents();
+            var students = await studentRepository.GetAllStudentsAsync();
 
-            var domainModelStudents = new List<Student>();
-
-            foreach (var student in students)
-            {
-                domainModelStudents.Add(new Student()
-                {
-                    Id = student.Id,
-                    FirstName = student.FirstName,
-                    LastName = student.LastName,
-                    DateOfBirth = student.DateOfBirth,
-                    Email = student.Email,
-                    Mobile = student.Mobile,
-                    ProfileImageUrl = student.ProfileImageUrl,
-                    GenderId = student.GenderId,
-                });
-            }
-            return Ok(domainModelStudents);
+            
+            return Ok(mapper.Map<List<Student.API.DomainModels.Student>>(students));
 
 
         }

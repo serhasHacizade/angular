@@ -1,4 +1,5 @@
-﻿using Student.API.DataModels;
+﻿using Microsoft.EntityFrameworkCore;
+using Student.API.DataModels;
 using StudentAdminContext;
 
 namespace Student.API.Repositories
@@ -13,9 +14,10 @@ namespace Student.API.Repositories
         }
 
 
-        public List<DataModels.Students> GetStudents()
+        public async Task<List<DataModels.Students>> GetAllStudentsAsync()
         {
-            return context.Students.ToList();
+            return await context.Students.Include(nameof(Gender)).Include(nameof(Address)).ToListAsync();
         }
+
     }
 }

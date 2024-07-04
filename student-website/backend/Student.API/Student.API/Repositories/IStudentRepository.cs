@@ -2,6 +2,6 @@
 {
     public interface IStudentRepository
     {
-        List<Student.API.DataModels.Students> GetStudents();
+        Task<List<Student.API.DataModels.Students>> GetAllStudentsAsync();
     }
 }
