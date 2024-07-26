@@ -135,3 +135,4 @@ C:\Users\erenf\OneDrive\Masaüstü\Klasör\Github\angular\student-website\backen
 C:\Users\erenf\OneDrive\Masaüstü\Klasör\Github\angular\student-website\backend\Student.API\Student.API\obj\Debug\net8.0\Student.API.pdb
 C:\Users\erenf\OneDrive\Masaüstü\Klasör\Github\angular\student-website\backend\Student.API\Student.API\obj\Debug\net8.0\Student.API.genruntimeconfig.cache
 C:\Users\erenf\OneDrive\Masaüstü\Klasör\Github\angular\student-website\backend\Student.API\Student.API\obj\Debug\net8.0\ref\Student.API.dll
+C:\Users\erenf\OneDrive\Masaüstü\Klasör\Github\angular\student-website\backend\Student.API\Student.API\bin\Debug\net8.0\AutoMapper.dll

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Student.API.DataModels;
+using Student.API.Profiles;
 using Student.API.Repositories;
 using StudentAdminContext;
 
@@ -19,7 +20,7 @@ builder.Services.AddDbContext<EntityDbContext>(options => options.UseSqlServer(c
 builder.Services.AddScoped<IStudentRepository, SqlStudentRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddAutoMapper(typeof(Startup).Assembly);
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 
