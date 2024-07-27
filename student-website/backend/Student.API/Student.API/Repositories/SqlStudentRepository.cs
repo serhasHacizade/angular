@@ -13,11 +13,15 @@ namespace Student.API.Repositories
             this.context = context;
         }
 
+       
 
         public async Task<List<DataModels.Students>> GetAllStudentsAsync()
         {
             return await context.Students.Include(nameof(Gender)).Include(nameof(Address)).ToListAsync();
         }
-
+        public async Task<Students> GetStudentAsync(Guid studentId)
+        {
+            return await context.Students.Include(nameof(Gender)).Include(nameof(Address)).FirstOrDefaultAsync(x => x.Id == studentId);
+        }
     }
 }

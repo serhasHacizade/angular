@@ -22,11 +22,18 @@ namespace Student.API.Controllers
         public async Task<IActionResult> GetAllStudentsAsync()
         {
             var students = await studentRepository.GetAllStudentsAsync();
-
-            
             return Ok(mapper.Map<List<Student.API.DomainModels.Student>>(students));
-
-
+        }
+        [HttpGet]
+        [Route("[controller]/{studentId:guid}")]
+        public async Task<IActionResult> GetAllStudentAsync([FromRoute] Guid studentId)
+        {
+            var student = await studentRepository.GetStudentAsync(studentId);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return Ok(mapper.Map<Student.API.DomainModels.Student>(student));
         }
     }
 }
