@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\erenf\\OneDrive\\Masa\u00FCst\u00FC\\Klas\u00F6r\\Github\\angular\\student-website\\backend\\Student.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0394550B-67B1-4BDC-A4FF-0368EEFCF046}|Student.API\\Student.API.csproj|c:\\users\\erenf\\onedrive\\masa\u00FCst\u00FC\\klas\u00F6r\\github\\angular\\student-website\\backend\\student.api\\student.api\\controllers\\genderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0394550B-67B1-4BDC-A4FF-0368EEFCF046}|Student.API\\Student.API.csproj|solutionrelative:student.api\\controllers\\genderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0394550B-67B1-4BDC-A4FF-0368EEFCF046}|Student.API\\Student.API.csproj|c:\\users\\erenf\\onedrive\\masa\u00FCst\u00FC\\klas\u00F6r\\github\\angular\\student-website\\backend\\student.api\\student.api\\repositories\\sqlstudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0394550B-67B1-4BDC-A4FF-0368EEFCF046}|Student.API\\Student.API.csproj|solutionrelative:student.api\\repositories\\sqlstudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0394550B-67B1-4BDC-A4FF-0368EEFCF046}|Student.API\\Student.API.csproj|c:\\users\\erenf\\onedrive\\masa\u00FCst\u00FC\\klas\u00F6r\\github\\angular\\student-website\\backend\\student.api\\student.api\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0394550B-67B1-4BDC-A4FF-0368EEFCF046}|Student.API\\Student.API.csproj|solutionrelative:student.api\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0394550B-67B1-4BDC-A4FF-0368EEFCF046}|Student.API\\Student.API.csproj|c:\\users\\erenf\\onedrive\\masa\u00FCst\u00FC\\klas\u00F6r\\github\\angular\\student-website\\backend\\student.api\\student.api\\profiles\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0394550B-67B1-4BDC-A4FF-0368EEFCF046}|Student.API\\Student.API.csproj|solutionrelative:student.api\\profiles\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SqlStudentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\erenf\\OneDrive\\Masa\u00FCst\u00FC\\Klas\u00F6r\\Github\\angular\\student-website\\backend\\Student.API\\Student.API\\Repositories\\SqlStudentRepository.cs",
+              "RelativeDocumentMoniker": "Student.API\\Repositories\\SqlStudentRepository.cs",
+              "ToolTip": "C:\\Users\\erenf\\OneDrive\\Masa\u00FCst\u00FC\\Klas\u00F6r\\Github\\angular\\student-website\\backend\\Student.API\\Student.API\\Repositories\\SqlStudentRepository.cs",
+              "RelativeToolTip": "Student.API\\Repositories\\SqlStudentRepository.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAQwBMAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-03T08:43:29.446Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -28,22 +45,22 @@
               "RelativeDocumentMoniker": "Student.API\\Controllers\\StudentController.cs",
               "ToolTip": "C:\\Users\\erenf\\OneDrive\\Masa\u00FCst\u00FC\\Klas\u00F6r\\Github\\angular\\student-website\\backend\\Student.API\\Student.API\\Controllers\\StudentController.cs",
               "RelativeToolTip": "Student.API\\Controllers\\StudentController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAAUwEAAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T11:53:58.531Z",
+              "WhenOpened": "2024-08-03T08:07:49.448Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GendersController.cs",
-              "DocumentMoniker": "C:\\Users\\erenf\\OneDrive\\Masa\u00FCst\u00FC\\Klas\u00F6r\\Github\\angular\\student-website\\backend\\Student.API\\Student.API\\Controllers\\GendersController.cs",
-              "RelativeDocumentMoniker": "Student.API\\Controllers\\GendersController.cs",
-              "ToolTip": "C:\\Users\\erenf\\OneDrive\\Masa\u00FCst\u00FC\\Klas\u00F6r\\Github\\angular\\student-website\\backend\\Student.API\\Student.API\\Controllers\\GendersController.cs",
-              "RelativeToolTip": "Student.API\\Controllers\\GendersController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAABSAAAA",
+              "DocumentIndex": 2,
+              "Title": "AutoMapperProfiles.cs",
+              "DocumentMoniker": "C:\\Users\\erenf\\OneDrive\\Masa\u00FCst\u00FC\\Klas\u00F6r\\Github\\angular\\student-website\\backend\\Student.API\\Student.API\\Profiles\\AutoMapperProfiles.cs",
+              "RelativeDocumentMoniker": "Student.API\\Profiles\\AutoMapperProfiles.cs",
+              "ToolTip": "C:\\Users\\erenf\\OneDrive\\Masa\u00FCst\u00FC\\Klas\u00F6r\\Github\\angular\\student-website\\backend\\Student.API\\Student.API\\Profiles\\AutoMapperProfiles.cs",
+              "RelativeToolTip": "Student.API\\Profiles\\AutoMapperProfiles.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABpAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T11:53:51.725Z",
+              "WhenOpened": "2024-08-03T08:06:33.121Z",
               "EditorCaption": ""
             }
           ]

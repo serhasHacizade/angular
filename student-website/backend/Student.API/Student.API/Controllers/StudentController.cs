@@ -2,6 +2,7 @@
 using Student.API.Repositories;
 using Student.API.DomainModels;
 using AutoMapper;
+using Student.API.DataModels;
 
 namespace Student.API.Controllers
 {
@@ -34,6 +35,34 @@ namespace Student.API.Controllers
                 return NotFound();
             }
             return Ok(mapper.Map<Student.API.DomainModels.Student>(student));
+        }
+        [HttpPut]
+        [Route("[controller]/{studentId:guid}")]
+        public async Task<IActionResult> UpdateStudentAsync([FromRoute] Guid studentId, [FromBody] UpdateStudentRequest request)
+        {
+            if (await studentRepository.Exists(studentId))
+            {
+                var updatedStudent = await studentRepository.UpdateStudent(studentId, mapper.Map<DataModels.Students>(request));
+                if (updatedStudent != null)
+                {
+                    return Ok(mapper.Map<Student.API.DomainModels.Student>(updatedStudent));
+                }
+            }
+            return NotFound();
+        }
+        [HttpDelete]
+        [Route("[controller]/{studentId:guid}")]
+        public async Task<IActionResult> DeleteStudentAsync([FromRoute] Guid studentId)
+        {
+            if (await studentRepository.Exists(studentId))
+            {
+                var student = await studentRepository.DeleteStudent(studentId);
+                if (student != null)
+                {
+                    return Ok(mapper.Map<Student.API.DomainModels.Student>(student));
+                }
+            }
+            return NotFound();
         }
     }
 }
