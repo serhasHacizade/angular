@@ -26,8 +26,8 @@ namespace Student.API.Controllers
             return Ok(mapper.Map<List<Student.API.DomainModels.Student>>(students));
         }
         [HttpGet]
-        [Route("[controller]/{studentId:guid}")]
-        public async Task<IActionResult> GetAllStudentAsync([FromRoute] Guid studentId)
+        [Route("[controller]/{studentId:guid}"), ActionName("GetStudentAsync")]
+        public async Task<IActionResult> GetStudentAsync([FromRoute] Guid studentId)
         {
             var student = await studentRepository.GetStudentAsync(studentId);
             if (student == null)
@@ -63,6 +63,13 @@ namespace Student.API.Controllers
                 }
             }
             return NotFound();
+        }
+        [HttpPost]
+        [Route("[controller]/Add")]
+        public async Task<IActionResult> AddStudentAsync([FromBody] AddStudentRequest request)
+        {
+            var student = await studentRepository.AddStudent(mapper.Map<DataModels.Students>(request));
+            return CreatedAtAction(nameof(GetStudentAsync), new {studentId = student.Id}, mapper.Map<Student.API.DomainModels.Student>(student));
         }
     }
 }

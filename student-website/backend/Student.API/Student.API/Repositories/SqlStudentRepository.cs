@@ -14,6 +14,13 @@ namespace Student.API.Repositories
             this.context = context;
         }
 
+        public async Task<Students> AddStudent(Students request)
+        {
+            var student = await context.Students.AddAsync(request);
+            await context.SaveChangesAsync();
+            return student.Entity;
+        }
+
         public async Task<Students> DeleteStudent(Guid studentId)
         {
             var existingStudent = await GetStudentAsync(studentId);
