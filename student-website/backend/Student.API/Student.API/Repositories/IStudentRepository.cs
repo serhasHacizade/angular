@@ -10,6 +10,7 @@
         Task<Student.API.DataModels.Students> UpdateStudent(Guid studentId, Student.API.DataModels.Students student);
         Task<Student.API.DataModels.Students> DeleteStudent(Guid studentId);
         Task<Student.API.DataModels.Students> AddStudent(Student.API.DataModels.Students student);
+        Task<bool> UpdateProfileImage(Guid studentId, string profileImageUrl);
 
     }
 }

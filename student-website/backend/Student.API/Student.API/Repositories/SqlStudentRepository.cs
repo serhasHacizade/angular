@@ -53,6 +53,18 @@ namespace Student.API.Repositories
             return await context.Students.Include(nameof(Gender)).Include(nameof(Address)).FirstOrDefaultAsync(x => x.Id == studentId);
         }
 
+        public async Task<bool> UpdateProfileImage(Guid studentId, string profileImageUrl)
+        {
+            var student = await GetStudentAsync(studentId);
+            if (student != null)
+            {
+                student.ProfileImageUrl = profileImageUrl;
+                await context.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
+
         public  async Task<Students> UpdateStudent(Guid studentId, Students request)
         {
             var existingStudent = await GetStudentAsync(studentId);
